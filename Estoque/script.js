@@ -1,6 +1,7 @@
 document.getElementById('formProduto').addEventListener('submit', function (event) {
     event.preventDefault();
 
+    const data = document.getElementById('data').value;
     const codigo = document.getElementById('codigo').value;
     const nome = document.getElementById('nome').value;
     const quantidade = parseInt(document.getElementById('quantidade').value);
@@ -13,6 +14,7 @@ document.getElementById('formProduto').addEventListener('submit', function (even
     const novaLinha = tabela.insertRow();
 
     novaLinha.innerHTML = `
+        <td>${data}</td>
         <td>${codigo}</td>
         <td>${nome}</td>
         <td>${quantidade}</td>
@@ -36,11 +38,12 @@ function editarProduto(botao) {
     const colunas = linha.getElementsByTagName('td');
 
     // Preencher os campos com os dados do produto
-    document.getElementById('codigo').value = colunas[0].innerText;
-    document.getElementById('nome').value = colunas[1].innerText;
-    document.getElementById('quantidade').value = colunas[2].innerText;
-    document.getElementById('preco').value = colunas[3].innerText.replace('R$ ', '');
-    document.getElementById('custo').value = colunas[4].innerText.replace('R$ ', '');
+    document.getElementById('data').value = colunas[0].innerText;
+    document.getElementById('codigo').value = colunas[1].innerText;
+    document.getElementById('nome').value = colunas[2].innerText;
+    document.getElementById('quantidade').value = colunas[3].innerText;
+    document.getElementById('preco').value = colunas[4].innerText.replace('R$ ', '');
+    document.getElementById('custo').value = colunas[5].innerText.replace('R$ ', '');
 
     // Remover a linha para substituição
     excluirProduto(botao);
