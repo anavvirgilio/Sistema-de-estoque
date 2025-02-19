@@ -6,8 +6,11 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family:serif;
+    /*background-color: #f4f4f4;*/
+    background-image: url(fundo.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,6 +28,7 @@ body {
 }
 
 h1 {
+    color: #17364a;
     margin-bottom: 20px;
 }
 
